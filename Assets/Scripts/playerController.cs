@@ -6,6 +6,8 @@ public class playerController : MonoBehaviour
 {
     // Start is called before the first frame update
     public Rigidbody2D rb;
+    public float moveSpeed = 10f;
+    public float jumpForce = 10f;
     
   
 
@@ -15,21 +17,21 @@ public class playerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    //comment
+    //comment something 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) 
+        if (Input.GetKey(KeyCode.LeftArrow)) 
         {
-            rb.velocity = new Vector2(-10, rb.velocity.y);
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            rb.velocity = new Vector2(10, rb.velocity.y);
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 10f);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
 
