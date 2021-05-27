@@ -8,12 +8,13 @@ public class playerController : MonoBehaviour
     public Rigidbody2D rb;
     public float moveSpeed = 10f;
     public float jumpForce = 10f;
-    
+
+    public AudioSource CoinSound;
   
 
     void Start()
     {
-   
+
     }
 
     // Update is called once per frame
@@ -42,6 +43,8 @@ public class playerController : MonoBehaviour
         if (col.gameObject.tag == "coin")
         {
             col.gameObject.SetActive(false);
+            CoinSound = GetComponent<AudioSource> ();
+            CoinSound.Play();
         }
     }
 
