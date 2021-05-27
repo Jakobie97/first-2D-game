@@ -37,8 +37,12 @@ public class playerController : MonoBehaviour
 
     }
 
-    void FixedUpdate()
+    void OnCollisionEnter2D(Collision2D col)
     {
-
+        if (col.gameObject.tag == "coin")
+        {
+            col.gameObject.SetActive(false);
+        }
     }
+
 }
